@@ -12,6 +12,7 @@ import com.example.petcaremanager.Page.DietPlanner.DietPlannerActivity;
 import com.example.petcaremanager.Page.Expense.ExpenseTrackerActivity;
 import com.example.petcaremanager.Page.HealthTracker.HealthTrackerActivity;
 import com.example.petcaremanager.Page.PetProfiles.PetProfilesActivity;
+import com.example.petcaremanager.Page.Task.TaskManagerActivity;
 import com.example.petcaremanager.R;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -21,14 +22,18 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // Buttons for features
         Button petProfilesButton = findViewById(R.id.petProfileButton);
         Button taskManagerButton = findViewById(R.id.taskManagerButton);
         Button heaalthManagerButton = findViewById(R.id.petHealthButton);
         Button dietManagerButton = findViewById(R.id.petDietButton);
         Button expenseManagerButton = findViewById(R.id.petExpenseButton);
 
-        // Navigate to Pet Profiles feature
+        Button petSocialButton = findViewById(R.id.petSocialButton);
+        Button petAdoptionButton = findViewById(R.id.petAdoptionButton);
+        Button weatherAlertsButton = findViewById(R.id.weatherAlertsButton);
+        Button trainingTipsButton = findViewById(R.id.trainingTipsButton);
+        Button emergencyContactButton = findViewById(R.id.emergencyContactButton);
+
         petProfilesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +51,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        expenseManagerButton.setOnClickListener(new View.OnClickListener() {
+        dietManagerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, DietPlannerActivity.class);
@@ -62,8 +67,28 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        taskManagerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, TaskManagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Placeholder for Task Manager feature
-        taskManagerButton.setOnClickListener(v ->
-                Toast.makeText(DashboardActivity.this, "Task Manager Coming Soon!", Toast.LENGTH_SHORT).show());
+        petSocialButton.setOnClickListener(v ->
+                Toast.makeText(DashboardActivity.this, "Pet Social Network Coming Soon!", Toast.LENGTH_SHORT).show());
+
+        petAdoptionButton.setOnClickListener(v ->
+                Toast.makeText(DashboardActivity.this, "Pet Adoption and Services Directory Coming Soon!", Toast.LENGTH_SHORT).show());
+
+        weatherAlertsButton.setOnClickListener(v ->
+                Toast.makeText(DashboardActivity.this, "Weather Alerts for Pet Safety Coming Soon!", Toast.LENGTH_SHORT).show());
+
+        trainingTipsButton.setOnClickListener(v ->
+                Toast.makeText(DashboardActivity.this, "Training Tips and Tutorials Coming Soon!", Toast.LENGTH_SHORT).show());
+
+        emergencyContactButton.setOnClickListener(v ->
+                Toast.makeText(DashboardActivity.this, "Emergency Contact Info Coming Soon!", Toast.LENGTH_SHORT).show());
     }
 }

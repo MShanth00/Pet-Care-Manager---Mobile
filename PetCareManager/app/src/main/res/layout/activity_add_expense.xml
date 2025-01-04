@@ -15,19 +15,19 @@
         android:id="@+id/etFoodExpense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Food Expense ($)" />
+        android:hint="Food Expense (LKR)" />
 
     <EditText
         android:id="@+id/etMedicineExpense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Medicine Expense ($)" />
+        android:hint="Medicine Expense (LKR)" />
 
     <EditText
         android:id="@+id/etOtherExpense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Other Expense ($)" />
+        android:hint="Other Expense (LKR)" />
 
     <Button
         android:id="@+id/btnSaveExpense"

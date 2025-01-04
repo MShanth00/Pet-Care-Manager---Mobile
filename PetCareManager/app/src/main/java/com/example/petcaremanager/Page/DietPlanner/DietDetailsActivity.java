@@ -24,7 +24,6 @@ public class DietDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet_details);
 
-        // Initialize views
         etStartDate = findViewById(R.id.etStartDate);
         etEndDate = findViewById(R.id.etEndDate);
         etFoodType = findViewById(R.id.etFoodType);
@@ -36,13 +35,10 @@ public class DietDetailsActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
-        // Get diet plan ID from Intent
         dietPlanId = getIntent().getIntExtra("diet_plan_id", -1);
 
-        // Load diet plan details
         loadDietDetails(dietPlanId);
 
-        // Set save button listener
         btnSave.setOnClickListener(v -> {
             if (updateDietPlan(dietPlanId)) {
                 Toast.makeText(this, "Diet plan updated successfully", Toast.LENGTH_SHORT).show();
@@ -50,7 +46,6 @@ public class DietDetailsActivity extends AppCompatActivity {
             }
         });
 
-        // Set delete button listener
         btnDelete.setOnClickListener(v -> {
             if (deleteDietPlan(dietPlanId)) {
                 Toast.makeText(this, "Diet plan deleted successfully", Toast.LENGTH_SHORT).show();
@@ -68,14 +63,6 @@ public class DietDetailsActivity extends AppCompatActivity {
                 null, null, null
         );
 
-//        if (cursor.moveToFirst()) {
-//            etStartDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_START_DATE)));
-//            etEndDate.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_END_DATE)));
-//            etFoodType.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_FOOD_TYPE)));
-//            etQuantity.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_FOOD_QUANTITY)));
-//            etDescription.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DESCRIPTION)));
-//            etMedicine.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_MEDICINE)));
-//        }
 
         if (cursor.moveToFirst()) {
             int startDateIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_START_DATE);

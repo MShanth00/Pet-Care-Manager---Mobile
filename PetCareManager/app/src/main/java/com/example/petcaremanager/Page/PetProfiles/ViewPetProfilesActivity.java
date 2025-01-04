@@ -128,7 +128,7 @@ public class ViewPetProfilesActivity extends AppCompatActivity {
         int petAge = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_AGE));
         String petBreed = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_BREED));
 
-        // Show edit dialog
+
         EditPetDialogFragment dialogFragment = EditPetDialogFragment.newInstance(petId, petName, petAge, petBreed);
         dialogFragment.setOnPetUpdatedListener(() -> displayPetProfiles());
         dialogFragment.show(getSupportFragmentManager(), "EditPetDialog");

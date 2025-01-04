@@ -36,13 +36,10 @@ public class ExpenseDetailsActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
-        // Get expense ID from Intent
         expenseId = getIntent().getIntExtra("expense_id", -1);
 
-        // Load expense details
         loadExpenseDetails(expenseId);
 
-        // Delete expense
         btnDeleteExpense.setOnClickListener(v -> deleteExpense());
     }
 

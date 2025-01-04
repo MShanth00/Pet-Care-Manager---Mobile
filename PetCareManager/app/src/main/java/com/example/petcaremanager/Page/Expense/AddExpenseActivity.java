@@ -24,7 +24,6 @@ public class AddExpenseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
 
-        // Initialize views
         etFoodExpense = findViewById(R.id.etFoodExpense);
         etMedicineExpense = findViewById(R.id.etMedicineExpense);
         etOtherExpense = findViewById(R.id.etOtherExpense);

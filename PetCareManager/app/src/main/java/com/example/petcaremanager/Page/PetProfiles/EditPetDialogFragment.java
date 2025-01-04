@@ -49,16 +49,13 @@ public class EditPetDialogFragment extends DialogFragment {
             petBreed = getArguments().getString("petBreed");
         }
 
-        // Inflate the custom layout for the dialog
         LayoutInflater inflater = requireActivity().getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_edit_pet, null);
 
-        // Initialize EditText fields
         editTextName = dialogView.findViewById(R.id.editTextName);
         editTextAge = dialogView.findViewById(R.id.editTextAge);
         editTextBreed = dialogView.findViewById(R.id.editTextBreed);
 
-        // Set initial values
         editTextName.setText(petName);
         editTextAge.setText(String.valueOf(petAge));
         editTextBreed.setText(petBreed);

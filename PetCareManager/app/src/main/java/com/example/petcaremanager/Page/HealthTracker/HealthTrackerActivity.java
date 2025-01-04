@@ -1,7 +1,6 @@
 package com.example.petcaremanager.Page.HealthTracker;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -70,14 +69,12 @@ public class HealthTrackerActivity extends AppCompatActivity {
         spinnerPets.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Assuming petIds is a List<Integer> that maps spinner positions to pet IDs
                 int selectedPetId = petIds.get(position);
                 loadHealthRecords(selectedPetId);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Handle case where no item is selected if necessary
             }
         });
     }
@@ -92,10 +89,8 @@ public class HealthTrackerActivity extends AppCompatActivity {
             return;
         }
 
-        // Get pet ID from spinner (assuming spinner holds pet_id values directly)
         int selectedPetId = (int) spinnerPets.getSelectedItemId();
 
-        // Insert into database
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.COLUMN_PET_ID, selectedPetId);
@@ -103,7 +98,6 @@ public class HealthTrackerActivity extends AppCompatActivity {
         values.put(DatabaseHelper.COLUMN_DESCRIPTION, description);
         values.put(DatabaseHelper.COLUMN_NOTES, notes);
 
-//        long result = db.insert(DatabaseHelper.TABLE_HEALTH_RECORDS, null, values);
 
 
         try {
@@ -123,7 +117,6 @@ public class HealthTrackerActivity extends AppCompatActivity {
     private void loadHealthRecords(int petId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // Query to fetch health records for the specific pet
         Cursor cursor = db.rawQuery(
                 "SELECT id AS _id, date, description FROM health_records WHERE pet_id = ?",
                 new String[]{String.valueOf(petId)}
@@ -134,7 +127,6 @@ public class HealthTrackerActivity extends AppCompatActivity {
             return;
         }
 
-        // Create SimpleCursorAdapter
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                 this,
                 R.layout.simple_list,

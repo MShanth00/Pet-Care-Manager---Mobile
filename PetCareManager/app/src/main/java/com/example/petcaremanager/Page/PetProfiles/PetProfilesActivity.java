@@ -22,7 +22,6 @@ public class PetProfilesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_profiles);
 
-        // Initialize views
         ImageView petProfileImage = findViewById(R.id.petProfileImage);
         EditText petNameInput = findViewById(R.id.petNameInput);
         EditText petBreedInput = findViewById(R.id.petBreedInput);
@@ -34,7 +33,6 @@ public class PetProfilesActivity extends AppCompatActivity {
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
 
-        // Save profile button functionality
         savePetProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,10 +61,8 @@ public class PetProfilesActivity extends AppCompatActivity {
                     }
                     db.close();
 
-                    // Save data locally (for now, just showing a success message)
                     Toast.makeText(PetProfilesActivity.this, "Profile saved for " + petName, Toast.LENGTH_SHORT).show();
 
-                    // Clear the inputs after saving
                     petNameInput.setText("");
                     petBreedInput.setText("");
                     petAgeInput.setText("");

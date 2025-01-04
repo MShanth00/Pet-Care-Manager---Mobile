@@ -2,48 +2,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
     <Spinner
         android:id="@+id/spinnerPets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Select Pet" />
+        android:hint="Select Pet"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="@android:color/black" />
 
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date" />
+        android:hint="Date"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:inputType="date"/>
 
     <EditText
         android:id="@+id/editTextDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Description" />
+        android:hint="Description"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="@android:color/black"/>
 
     <EditText
         android:id="@+id/editTextNotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Notes" />
+        android:hint="Notes"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="@android:color/black"/>
 
     <Button
         android:id="@+id/buttonSaveHealthRecord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="Save"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Health Records"
         android:paddingTop="16dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/listViewHealthRecords"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:paddingTop="8dp" />
 
 </LinearLayout>

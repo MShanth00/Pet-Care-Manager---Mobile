@@ -22,14 +22,13 @@ public class AddEditDietActivity extends AppCompatActivity {
 
     private DatabaseHelper dbHelper;
     private int petId;
-    private int dietId = -1; // For editing; default is -1 (add mode)
+    private int dietId = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_diet);
 
-        // Initialize views
         etStartDate = findViewById(R.id.etStartDate);
         etEndDate = findViewById(R.id.etEndDate);
         etFoodType = findViewById(R.id.etFoodType);
@@ -40,12 +39,10 @@ public class AddEditDietActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
-        // Get pet ID and (optional) diet ID from intent
         petId = getIntent().getIntExtra("pet_id", -1);
         dietId = getIntent().getIntExtra("diet_id", -1);
 
         if (dietId != -1) {
-            // If dietId is provided, load the diet plan details for editing
             loadDietPlanDetails(dietId);
         }
 
@@ -60,7 +57,6 @@ public class AddEditDietActivity extends AppCompatActivity {
     private void loadDietPlanDetails(int dietId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // Query to fetch diet plan details
         String query = "SELECT * FROM " + DatabaseHelper.TABLE_DIET_PLANS + " WHERE " + DatabaseHelper.COLUMN_DIET_ID + "=?";
         Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(dietId)});
 
@@ -123,7 +119,6 @@ public class AddEditDietActivity extends AppCompatActivity {
         values.put(DatabaseHelper.COLUMN_DESCRIPTION, description);
 
         if (dietId == -1) {
-            // Insert new diet plan
             long newRowId = db.insert(DatabaseHelper.TABLE_DIET_PLANS, null, values);
             if (newRowId != -1) {
                 Toast.makeText(this, "Diet plan added successfully", Toast.LENGTH_SHORT).show();
@@ -131,7 +126,6 @@ public class AddEditDietActivity extends AppCompatActivity {
                 Toast.makeText(this, "Failed to add diet plan", Toast.LENGTH_SHORT).show();
             }
         } else {
-            // Update existing diet plan
             int rowsAffected = db.update(DatabaseHelper.TABLE_DIET_PLANS, values,
                     DatabaseHelper.COLUMN_DIET_ID + "=?", new String[]{String.valueOf(dietId)});
             if (rowsAffected > 0) {
@@ -141,6 +135,6 @@ public class AddEditDietActivity extends AppCompatActivity {
             }
         }
 
-        finish(); // Close the activity
+        finish();
     }
 }

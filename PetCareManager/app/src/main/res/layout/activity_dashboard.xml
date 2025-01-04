@@ -1,51 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="#F9F9F9">
 
     <TextView
         android:id="@+id/dashboardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Pet Care Manager!"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:textColor="#3B5998"
+        android:layout_marginBottom="24dp" />
 
-    <Button
-        android:id="@+id/petProfileButton"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Manage Pet Profiles" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <Button
-        android:id="@+id/petHealthButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Health Tracke" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <Button
-        android:id="@+id/petDietButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Diet Planner" />
+            <Button
+                android:id="@+id/petProfileButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Manage Pet Profiles"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp" />
 
-    <Button
-        android:id="@+id/petExpenseButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Expense Tracker" />
+            <Button
+                android:id="@+id/petHealthButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Health Tracker"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp" />
 
-    <Button
-        android:id="@+id/taskManagerButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Task Manager"
-        android:layout_marginTop="8dp" />
+            <Button
+                android:id="@+id/petDietButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diet Planner"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp" />
 
+            <Button
+                android:id="@+id/petExpenseButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expense Tracker"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/taskManagerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task Manager"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/petSocialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pet Social Network (Coming Soon !)"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/petAdoptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pet Adoption and Services Directory (Coming Soon !)"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/weatherAlertsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weather Alerts for Pet Safety (Coming Soon !)"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/trainingTipsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Training Tips and Tutorials (Coming Soon !)"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/emergencyContactButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Emergency Contact Info (Coming Soon !)"
+                android:backgroundTint="#FFBB86FC"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

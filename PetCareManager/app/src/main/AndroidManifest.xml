@@ -35,6 +35,7 @@ package="com.example.petcaremanager">
     <activity android:name=".Page.Expense.ExpenseTrackerActivity" />
     <activity android:name=".Page.Expense.ExpenseDetailsActivity" />
     <activity android:name=".Page.Expense.AddExpenseActivity" />
+    <activity android:name=".Page.Task.TaskManagerActivity" />
 
 </application>
 

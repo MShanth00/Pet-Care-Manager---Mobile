@@ -5,17 +5,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pet Care Manager"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="32dp" />
+        android:textColor="@color/titleColor"
+        android:layout_marginBottom="40dp" />
 
     <EditText
         android:id="@+id/usernameInput"
@@ -23,7 +25,12 @@
         android:layout_height="wrap_content"
         android:hint="Username"
         android:inputType="text"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/passwordInput"
@@ -31,12 +38,21 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor"
+        android:textSize="16sp"/>
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:textColor="@color/buttonTextColor"
+        android:background="@drawable/button_bg"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

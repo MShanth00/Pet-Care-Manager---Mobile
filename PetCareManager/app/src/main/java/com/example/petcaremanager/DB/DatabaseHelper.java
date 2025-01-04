@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "PetCare.db";
-    private static final int DATABASE_VERSION = 4; // Incremented database version
+    private static final int DATABASE_VERSION = 5; // Incremented database version
 
     // Table and column names for the "pets" table
     public static final String TABLE_PETS = "pets";
@@ -42,6 +42,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EXPENSE_MEDICINE = "medicine_expense";
     public static final String COLUMN_EXPENSE_OTHER = "other_expense";
     public static final String COLUMN_EXPENSE_DATE = "expense_date";
+
+    // Inside DatabaseHelper class, add this table
+    public static final String TABLE_TASKS = "tasks";
+    public static final String COLUMN_TASK_ID = "task_id";
+    public static final String COLUMN_TASK_DATE = "task_date";
+    public static final String COLUMN_TASK_DESCRIPTION = "task_description";
 
 
     public DatabaseHelper(Context context) {
@@ -93,22 +99,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "ON DELETE CASCADE)";
         db.execSQL(createExpensesTable);
 
+        String createTasksTable = "CREATE TABLE " + TABLE_TASKS + " (" +
+                COLUMN_TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_TASK_DATE + " TEXT NOT NULL, " +
+                COLUMN_TASK_DESCRIPTION + " TEXT NOT NULL)";
+        db.execSQL(createTasksTable);
+
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 4) {
-            String createExpensesTable = "CREATE TABLE " + TABLE_EXPENSES + " (" +
-                    COLUMN_EXPENSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COLUMN_PET_ID + " INTEGER NOT NULL, " +
-                    COLUMN_EXPENSE_FOOD + " REAL DEFAULT 0, " +
-                    COLUMN_EXPENSE_MEDICINE + " REAL DEFAULT 0, " +
-                    COLUMN_EXPENSE_OTHER + " REAL DEFAULT 0, " +
-                    COLUMN_EXPENSE_DATE + " TEXT NOT NULL, " +
-                    "FOREIGN KEY (" + COLUMN_PET_ID + ") REFERENCES " + TABLE_PETS + "(" + COLUMN_ID + ") " +
-                    "ON DELETE CASCADE)";
-            db.execSQL(createExpensesTable);
+        if (oldVersion < 5) {
+            String createTasksTable = "CREATE TABLE " + TABLE_TASKS + " (" +
+                    COLUMN_TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COLUMN_TASK_DATE + " TEXT NOT NULL, " +
+                    COLUMN_TASK_DESCRIPTION + " TEXT NOT NULL)";
+            db.execSQL(createTasksTable);
         }
     }
 

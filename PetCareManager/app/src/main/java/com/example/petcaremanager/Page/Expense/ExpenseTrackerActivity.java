@@ -34,17 +34,14 @@ public class ExpenseTrackerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_tracker);
 
-        // Initialize views
         petSpinner = findViewById(R.id.spinnerPets);
         expenseListView = findViewById(R.id.listViewExpenses);
         addExpenseButton = findViewById(R.id.btnAddExpense);
 
         dbHelper = new DatabaseHelper(this);
 
-        // Load pets into spinner
         loadPetSpinner();
 
-        // Set spinner listener
         petSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -58,7 +55,6 @@ public class ExpenseTrackerActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // Set add button listener
         addExpenseButton.setOnClickListener(view -> {
             if (selectedPetId == -1) {
                 Toast.makeText(this, "Please select a pet first", Toast.LENGTH_SHORT).show();
@@ -69,7 +65,6 @@ public class ExpenseTrackerActivity extends AppCompatActivity {
             }
         });
 
-        // Set item click listener for expenses
         expenseListView.setOnItemClickListener((parent, view, position, id) -> {
             int expenseId = expenseIds.get(position);
             Intent intent = new Intent(ExpenseTrackerActivity.this, ExpenseDetailsActivity.class);

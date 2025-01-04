@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                } else if (username.equals("admin") && password.equals("1234")) { // Temporary validation
+                } else if (username.equals("admin") && password.equals("1234")) {
                     Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                     startActivity(intent);
                     finish();
