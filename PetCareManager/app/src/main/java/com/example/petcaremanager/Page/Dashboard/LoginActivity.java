@@ -1,4 +1,4 @@
-package com.example.petcaremanager;
+package com.example.petcaremanager.Page.Dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONObject;
+import com.example.petcaremanager.R;
 
 public class LoginActivity extends AppCompatActivity {
 

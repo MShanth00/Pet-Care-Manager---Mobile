@@ -1,4 +1,4 @@
-package com.example.petcaremanager;
+package com.example.petcaremanager.Page.PetProfiles;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.petcaremanager.DB.DatabaseHelper;
+import com.example.petcaremanager.R;
 
 public class PetProfilesActivity extends AppCompatActivity {
 

@@ -1,6 +1,8 @@
 package com.example.petcaremanager.dto;
 
-public class PetProfile {
+import java.io.Serializable;
+
+public class PetProfile  implements Serializable {
 
     private int id;
     private String name;

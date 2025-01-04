@@ -15,7 +15,7 @@ package="com.example.petcaremanager">
 
     <!-- Launcher Activity -->
     <activity
-        android:name=".LoginActivity"
+        android:name=".Page.Dashboard.LoginActivity"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -24,9 +24,12 @@ package="com.example.petcaremanager">
     </activity>
 
     <!-- Other Activities -->
-    <activity android:name=".DashboardActivity" />
-    <activity android:name=".PetProfilesActivity" />
-    <activity android:name=".ViewPetProfilesActivity" />
+    <activity android:name=".Page.Dashboard.DashboardActivity" />
+    <activity android:name=".Page.PetProfiles.PetProfilesActivity" />
+    <activity android:name=".Page.PetProfiles.ViewPetProfilesActivity" />
+    <activity android:name=".Page.HealthTracker.HealthTrackerActivity" />
+    <activity android:name=".Page.HealthTracker.SimpleActivity" />
+
 
 
 

@@ -1,4 +1,4 @@
-package com.example.petcaremanager;
+package com.example.petcaremanager.Page.PetProfiles;
 
 import android.app.Dialog;
 import android.content.ContentValues;
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.petcaremanager.DB.DatabaseHelper;
+import com.example.petcaremanager.R;
 
 public class EditPetDialogFragment extends DialogFragment {
 
