@@ -26,6 +26,8 @@ package="com.example.petcaremanager">
     <!-- Other Activities -->
     <activity android:name=".DashboardActivity" />
     <activity android:name=".PetProfilesActivity" />
+    <activity android:name=".ViewPetProfilesActivity" />
+
 
 
 

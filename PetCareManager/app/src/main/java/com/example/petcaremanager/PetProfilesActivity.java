@@ -1,6 +1,7 @@
 package com.example.petcaremanager;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ public class PetProfilesActivity extends AppCompatActivity {
         EditText petMedicalConditionsInput = findViewById(R.id.petMedicalConditionsInput);
         EditText petAllergiesInput = findViewById(R.id.petAllergiesInput);
         Button savePetProfileButton = findViewById(R.id.savePetProfileButton);
+        Button viewPetProfilesButton = findViewById(R.id.viewPetProfileButton);
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
 
@@ -72,5 +74,14 @@ public class PetProfilesActivity extends AppCompatActivity {
                 }
             }
         });
+
+        viewPetProfilesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PetProfilesActivity.this, ViewPetProfilesActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
