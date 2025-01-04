@@ -29,10 +29,9 @@ package="com.example.petcaremanager">
     <activity android:name=".Page.PetProfiles.ViewPetProfilesActivity" />
     <activity android:name=".Page.HealthTracker.HealthTrackerActivity" />
     <activity android:name=".Page.HealthTracker.SimpleActivity" />
-
-
-
-
+    <activity android:name=".Page.DietPlanner.DietPlannerActivity" />
+    <activity android:name=".Page.DietPlanner.AddEditDietActivity" />
+    <activity android:name=".Page.DietPlanner.DietDetailsActivity" />
 
 </application>
 

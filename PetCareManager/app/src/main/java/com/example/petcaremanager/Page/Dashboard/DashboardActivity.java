@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.petcaremanager.Page.DietPlanner.DietPlannerActivity;
 import com.example.petcaremanager.Page.HealthTracker.HealthTrackerActivity;
 import com.example.petcaremanager.Page.PetProfiles.PetProfilesActivity;
 import com.example.petcaremanager.R;
@@ -23,6 +24,7 @@ public class DashboardActivity extends AppCompatActivity {
         Button petProfilesButton = findViewById(R.id.petProfileButton);
         Button taskManagerButton = findViewById(R.id.taskManagerButton);
         Button heaalthManagerButton = findViewById(R.id.petHealthButton);
+        Button dietManagerButton = findViewById(R.id.petDietButton);
 
         // Navigate to Pet Profiles feature
         petProfilesButton.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +40,14 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, HealthTrackerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dietManagerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, DietPlannerActivity.class);
                 startActivity(intent);
             }
         });
