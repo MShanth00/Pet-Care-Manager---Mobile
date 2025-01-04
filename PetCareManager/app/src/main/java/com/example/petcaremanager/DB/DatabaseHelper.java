@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "PetCare.db";
-    private static final int DATABASE_VERSION = 3; // Incremented database version
+    private static final int DATABASE_VERSION = 4; // Incremented database version
 
     // Table and column names for the "pets" table
     public static final String TABLE_PETS = "pets";
@@ -33,6 +33,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_MEDICINE = "medicine";
     public static final String COLUMN_START_DATE = "start_date";
     public static final String COLUMN_END_DATE = "end_date";
+
+
+    // Table and column names for the "expenses" table
+    public static final String TABLE_EXPENSES = "expenses";
+    public static final String COLUMN_EXPENSE_ID = "expense_id";
+    public static final String COLUMN_EXPENSE_FOOD = "food_expense";
+    public static final String COLUMN_EXPENSE_MEDICINE = "medicine_expense";
+    public static final String COLUMN_EXPENSE_OTHER = "other_expense";
+    public static final String COLUMN_EXPENSE_DATE = "expense_date";
 
 
     public DatabaseHelper(Context context) {
@@ -73,24 +82,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "ON DELETE CASCADE)";
         db.execSQL(createDietPlansTable);
 
+        String createExpensesTable = "CREATE TABLE " + TABLE_EXPENSES + " (" +
+                COLUMN_EXPENSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_PET_ID + " INTEGER NOT NULL, " +
+                COLUMN_EXPENSE_FOOD + " REAL DEFAULT 0, " +
+                COLUMN_EXPENSE_MEDICINE + " REAL DEFAULT 0, " +
+                COLUMN_EXPENSE_OTHER + " REAL DEFAULT 0, " +
+                COLUMN_EXPENSE_DATE + " TEXT NOT NULL, " +
+                "FOREIGN KEY (" + COLUMN_PET_ID + ") REFERENCES " + TABLE_PETS + "(" + COLUMN_ID + ") " +
+                "ON DELETE CASCADE)";
+        db.execSQL(createExpensesTable);
+
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 3) {
-            String createDietPlansTable = "CREATE TABLE " + TABLE_DIET_PLANS + " (" +
-                    COLUMN_DIET_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        if (oldVersion < 4) {
+            String createExpensesTable = "CREATE TABLE " + TABLE_EXPENSES + " (" +
+                    COLUMN_EXPENSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_PET_ID + " INTEGER NOT NULL, " +
-                    COLUMN_START_DATE + " TEXT NOT NULL, " +
-                    COLUMN_END_DATE + " TEXT NOT NULL, " +
-                    COLUMN_FOOD_TYPE + " TEXT NOT NULL, " +
-                    COLUMN_FOOD_QUANTITY + " TEXT NOT NULL, " +
-                    COLUMN_MEDICINE + " TEXT, " +
-                    COLUMN_DESCRIPTION + " TEXT, " +
+                    COLUMN_EXPENSE_FOOD + " REAL DEFAULT 0, " +
+                    COLUMN_EXPENSE_MEDICINE + " REAL DEFAULT 0, " +
+                    COLUMN_EXPENSE_OTHER + " REAL DEFAULT 0, " +
+                    COLUMN_EXPENSE_DATE + " TEXT NOT NULL, " +
                     "FOREIGN KEY (" + COLUMN_PET_ID + ") REFERENCES " + TABLE_PETS + "(" + COLUMN_ID + ") " +
                     "ON DELETE CASCADE)";
-            db.execSQL(createDietPlansTable);
+            db.execSQL(createExpensesTable);
         }
     }
 

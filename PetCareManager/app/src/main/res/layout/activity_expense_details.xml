@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvPetName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pet Name: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvFoodExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Food Expense: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvMedicineExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Medicine Expense: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvOtherExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other Expense: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvTotalExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Expense: "
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnDeleteExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Expense"
+        android:backgroundTint="@android:color/holo_red_light" />
+</LinearLayout>

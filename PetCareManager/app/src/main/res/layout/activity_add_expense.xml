@@ -1,0 +1,37 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date (yyyy-mm-dd)" />
+
+    <EditText
+        android:id="@+id/etFoodExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Food Expense ($)" />
+
+    <EditText
+        android:id="@+id/etMedicineExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Medicine Expense ($)" />
+
+    <EditText
+        android:id="@+id/etOtherExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Other Expense ($)" />
+
+    <Button
+        android:id="@+id/btnSaveExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Expense" />
+</LinearLayout>

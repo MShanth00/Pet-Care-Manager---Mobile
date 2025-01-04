@@ -35,6 +35,12 @@
         android:text="Diet Planner" />
 
     <Button
+        android:id="@+id/petExpenseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expense Tracker" />
+
+    <Button
         android:id="@+id/taskManagerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
